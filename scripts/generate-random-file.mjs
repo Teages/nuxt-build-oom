@@ -8,7 +8,7 @@ import { finished } from 'node:stream/promises'
 const FILE_COUNT = process.env.FILE_COUNT ? Number(process.env.FILE_COUNT) : 5
 const TARGET_SIZE = process.env.FILE_SIZE_BYTES
   ? Number(process.env.FILE_SIZE_BYTES)
-  : 12 * 1024 * 1024
+  : 15 * 1024 * 1024
 const CHUNK_SIZE = 1024 * 1024
 const OUTPUT_DIR = resolve('app/assets/generated')
 
