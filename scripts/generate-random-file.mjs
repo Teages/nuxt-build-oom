@@ -5,7 +5,9 @@ import { dirname, resolve } from 'node:path'
 import process from 'node:process'
 import { finished } from 'node:stream/promises'
 
-const TARGET_SIZE = 100 * 1024 * 1024
+const TARGET_SIZE = process.env.FILE_SIZE_BYTES
+  ? Number(process.env.FILE_SIZE_BYTES)
+  : 10 * 1024 * 1024
 const CHUNK_SIZE = 1024 * 1024
 const outputPath = resolve('app/assets/generated/random-100m.txt')
 
