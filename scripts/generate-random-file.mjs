@@ -5,7 +5,7 @@ import { resolve } from 'node:path'
 import process from 'node:process'
 import { finished } from 'node:stream/promises'
 
-const FILE_COUNT = process.env.FILE_COUNT ? Number(process.env.FILE_COUNT) : 1
+const FILE_COUNT = process.env.FILE_COUNT ? Number(process.env.FILE_COUNT) : 5
 const TARGET_SIZE = process.env.FILE_SIZE_BYTES
   ? Number(process.env.FILE_SIZE_BYTES)
   : 12 * 1024 * 1024
