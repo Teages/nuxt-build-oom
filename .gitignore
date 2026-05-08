@@ -24,4 +24,4 @@ logs
 !.env.example
 
 # Generated experiment artifacts
-app/assets/generated/random-100m.txt
+app/assets/generated/

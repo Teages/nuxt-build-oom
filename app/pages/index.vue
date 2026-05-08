@@ -13,8 +13,14 @@ const fileSizeLabel = computed(() => {
 
 onMounted(async () => {
   try {
-    const rawModule = await import('~/assets/generated/random-100m.txt?raw')
-    fileSizeBytes.value = new Blob([rawModule.default]).size
+    const parts = await Promise.all([
+      import('~/assets/generated/random-part-1.js'),
+      import('~/assets/generated/random-part-2.js'),
+      import('~/assets/generated/random-part-3.js'),
+      import('~/assets/generated/random-part-4.js'),
+      import('~/assets/generated/random-part-5.js'),
+    ])
+    fileSizeBytes.value = parts.reduce((sum, m) => sum + new Blob([m.default]).size, 0)
   }
   catch (error) {
     fileLoadError.value = error instanceof Error ? error.message : 'Unknown error'
