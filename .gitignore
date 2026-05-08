@@ -22,3 +22,6 @@ logs
 .env
 .env.*
 !.env.example
+
+# Generated experiment artifacts
+app/assets/generated/random-100m.txt
